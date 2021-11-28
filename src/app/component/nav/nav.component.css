@@ -14,3 +14,7 @@
     border-radius: 50px 50px 50px 50px;
     /* background: #2b3b92; */
 }
+
+nav {
+    float: right;
+}

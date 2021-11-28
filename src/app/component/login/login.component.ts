@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -11,12 +12,13 @@ export class LoginComponent implements OnInit {
   hide: boolean = true;
   enabled: boolean = false;
   constructor(private toastr: ToastrService) { }
-
+  
   ngOnInit(): void {
+    
   }
 
-  login() {
+  login(f: NgForm) {
     console.log(this.model);
-    this.toastr.success(JSON.stringify(this.model));
+    f.valid ? this.toastr.success(JSON.stringify(this.model)) : this.toastr.error('invalid Username and Password');
   }
 }
